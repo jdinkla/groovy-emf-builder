@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="src" path="test"/>
+	<classpathentry kind="src" path="examples"/>
+	<classpathentry exported="true" kind="lib" path="bin-groovy" sourcepath="bin-groovy"/>
+	<classpathentry exported="true" kind="lib" path="lib/org.eclipse.emf.examples.library.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/org.eclipse.example.library.jar"/>
+	<classpathentry kind="lib" path="lib/junit-4.3.1.jar"/>
+	<classpathentry kind="lib" path="lib/org.eclipse.emf.common_2.3.0.v200709252135.jar"/>
+	<classpathentry kind="lib" path="lib/org.eclipse.emf.ecore_2.3.1.v200709252135.jar"/>
+	<classpathentry kind="lib" path="lib/org.eclipse.emf.ecore.xmi_2.3.1.v200709252135.jar"/>
+	<classpathentry kind="lib" path="lib/org.eclipse.uml2.common_1.3.1.v200707311200.jar"/>
+	<classpathentry kind="lib" path="lib/org.eclipse.uml2.uml_2.1.1.v200707311200.jar"/>
+	<classpathentry kind="lib" path="lib/groovy-all-1.5.1.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/3"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

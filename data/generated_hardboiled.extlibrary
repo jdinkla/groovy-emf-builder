@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="ASCII"?>
+<extlib:Library xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:extlib="http:///org/eclipse/emf/examples/library/extlibrary.ecore/1.0.0" name="Hardboiled Library">
+  <stock xsi:type="extlib:Book" title="The Maltese Falcon" pages="224" category="Mystery" author="//@writers.0"/>
+  <stock xsi:type="extlib:Book" title="Red Harvest" pages="224" category="Mystery" author="//@writers.0"/>
+  <stock xsi:type="extlib:Book" title="The Big Sleep" pages="234" category="Mystery" author="//@writers.1"/>
+  <stock xsi:type="extlib:Book" title="The High Window" pages="272" category="Mystery" author="//@writers.1"/>
+  <stock xsi:type="extlib:Book" title="Meet Me at the Morgue" pages="241" category="Mystery" author="//@writers.2"/>
+  <stock xsi:type="extlib:Book" title="The Far Side of the Dollar" pages="245" category="Mystery" author="//@writers.2"/>
+  <writers firstName="Dashiell" lastName="Hammet" books="//@stock.0 //@stock.1"/>
+  <writers firstName="Raymond" lastName="Chandler" books="//@stock.2 //@stock.3"/>
+  <writers firstName="Ross" lastName="Macdonald" books="//@stock.4 //@stock.5"/>
+</extlib:Library>

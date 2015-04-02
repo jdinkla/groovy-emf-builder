@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="ASCII"?>
+<uml:StateMachine xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:uml="http://www.eclipse.org/uml2/2.1.0/UML" name="SM">
+  <region>
+    <subvertex xsi:type="uml:State" name="alpha"/>
+    <subvertex xsi:type="uml:State" name="beta"/>
+    <transition target="//@region.0/beta" source="//@region.0/alpha"/>
+  </region>
+</uml:StateMachine>

@@ -1,0 +1,247 @@
+<?xml version="1.0"?>
+<!-- ====================================================================== 
+     26.11.2007 12:22:00                                                        
+
+     Groovy EMF Builder    
+
+	Copyright (C) 2007 Joern Dinkla, www.dinkla.net, joern@dinkla.net
+
+	This program is free software; you can redistribute it and/or
+	modify it under the terms of the GNU General Public License
+	as published by the Free Software Foundation; either version 2
+	of the License, or (at your option) any later version.
+
+	This program is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU General Public License for more details.
+
+	You should have received a copy of the GNU General Public License
+	along with this program; if not, write to the Free Software
+	Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA
+	
+     ====================================================================== -->
+<project name="net.dinkla.emfbuilder" default="build">
+    <description>
+    	Groovy EMF Builder
+    </description>
+
+	<property environment="env" />
+	<property file="build.properties" />
+	
+	<!-- classpath.cobertura -->
+	<path id="classpath.cobertura">
+		<fileset dir="${cobertura.dir}">
+		        <include name="cobertura.jar" />
+		        <include name="lib/**/*.jar" />
+		</fileset>
+    </path>
+	
+	<!-- classpath.compile -->
+    <path id="classpath.compile">
+		<pathelement path="${junit.jar}/" />
+        <pathelement path="${classes.dir}" />
+    	<pathelement path="${emf.ecore}" />
+    	<pathelement path="${emf.common}" />
+    	<pathelement path="${emf.ecore.xmi}" />
+    	<pathelement path="${uml2.common}" />
+    	<pathelement path="${uml2.uml}" />
+    	<pathelement path="${examples.1}" />
+    	<pathelement path="${examples.2}" />
+    </path>
+
+	<!-- classpath.junit -->
+    <path id="classpath.junit">
+        <pathelement path="${instrumented.dir}" />
+        <pathelement path="${classes.dir}" />
+		<pathelement path="${junit.jar}" />
+		<pathelement path="${fq.groovy.jar}" />
+    	<pathelement path="${emf.ecore}" />
+    	<pathelement path="${emf.common}" />
+    	<pathelement path="${emf.ecore.xmi}" />
+    	<pathelement path="${uml2.common}" />
+    	<pathelement path="${uml2.uml}" />
+    	<pathelement path="${examples.1}" />
+    	<pathelement path="${examples.2}" />
+    </path>
+
+	<taskdef classpathref="classpath.cobertura" resource="tasks.properties"/>
+	<taskdef name="groovy" classname="org.codehaus.groovy.ant.Groovy" classpath="${fq.groovy.jar}"/>
+	<taskdef name="groovyc" classname="org.codehaus.groovy.ant.Groovyc" classpath="${fq.groovy.jar}"/>
+
+	<!-- ================================= 
+          target: init              
+         ================================= -->
+    <target name="init" depends="" description="Initializes the directory structure">
+    	<mkdir dir="${build.dir}" />
+    	<mkdir dir="${classes.dir}" />
+    	<mkdir dir="${instrumented.dir}"/>
+        <mkdir dir="${reports.xml.dir}" />
+        <mkdir dir="${reports.html.dir}" />
+        <mkdir dir="${coverage.xml.dir}" />
+        <mkdir dir="${coverage.html.dir}" />
+    	<mkdir dir="${delivery.dir}" />
+    </target>
+
+	<!-- ================================= 
+          target: clean              
+         ================================= -->
+    <target name="clean" depends="" description="Cleans the project.">
+        <delete dir="${classes.dir}" failonerror="false"/>
+        <delete dir="${instrumented.dir}" failonerror="false"/>
+        <delete dir="${reports.dir}" failonerror="false"/>
+    	<delete dir="${delivery.dir}" failonerror="false"/>
+    	<delete dir="${build.dir}" failonerror="false"/>
+        <delete file="cobertura.log" failonerror="false"/>
+        <delete file="cobertura.ser" failonerror="false"/>
+    </target>
+	
+    <!-- ================================= 
+          target: compile  
+         ================================= -->
+    <target name="compile" depends="init" description="Compiles the Java and Groovy classes">
+    	<groovyc srcdir="${src.dir}" destdir="${classes.dir}" stacktrace="true" verbose="true">
+ 			<classpath refid="classpath.compile" />
+		</groovyc>
+    	<groovyc srcdir="${test.dir}" destdir="${classes.dir}" stacktrace="true" verbose="true">
+			<classpath refid="classpath.compile" />
+		</groovyc>
+    	<groovyc srcdir="${examples.dir}" destdir="${classes.dir}" stacktrace="true" verbose="true">
+			<classpath refid="classpath.compile" />
+		</groovyc>
+    </target>
+
+    <!-- ================================= 
+          target: compile2  
+         ================================= -->
+    <target name="compile2" depends="init" description="Compiles the Java and Groovy classes">
+    	<groovyc srcdir="${src.dir}" destdir="${classes.dir}">
+ 			<classpath refid="classpath.compile" />
+		</groovyc>
+    	<groovyc srcdir="${test.dir}" destdir="${classes.dir}">
+			<classpath refid="classpath.compile" />
+		</groovyc>
+    	<groovyc srcdir="${examples.dir}" destdir="${classes.dir}">
+			<classpath refid="classpath.compile" />
+		</groovyc>
+    </target>
+
+	<!-- ================================= 
+          target: instrument              
+         ================================= -->
+    <target name="instrument" depends="compile" description="Runs cobertura test coverage">
+    	<delete file="${cobertura.ser}" />
+    	<cobertura-instrument todir="${instrumented.dir}" datafile="${cobertura.ser}">
+    		<fileset dir="${classes.dir}">
+	            <include name="**/*.class" />
+	            <exclude name="**/*Test.class" />
+	            <exclude name="**/*Test$_*.class" />
+            </fileset>
+    	</cobertura-instrument>
+    </target>
+	
+	<!-- ================================= 
+          target: junit              
+         ================================= -->
+    <target name="junit" depends="compile" description="Runs the JUnit tests">
+        <junit fork="true" errorproperty="test.failed" failureproperty="test.failed">
+        	<sysproperty key="net.sourceforge.cobertura.datafile" file="${cobertura.ser}" />
+        	<classpath refid="classpath.junit" />
+			<classpath refid="classpath.cobertura" />
+            <formatter type="brief" usefile="false"/>
+            <formatter type="xml" />
+            <batchtest todir="${reports.xml.dir}">
+            	<fileset dir="${classes.dir}">
+					<include name="**/*Test.class" />
+				</fileset>
+			</batchtest>
+         </junit>
+
+    	 <junitreport todir="${reports.xml.dir}">
+	        <fileset dir="${reports.xml.dir}">
+	            <include name="TEST-*.xml" />
+            </fileset>
+            <report format="frames" todir="${reports.html.dir}" />
+	    </junitreport>
+
+    	<fail message="JUnit tests failed! Check test reports" if="test.failed" />
+	</target>
+
+	<!-- ================================= 
+          target: report              
+         ================================= -->
+    <target name="report" depends="clean,compile2,instrument,junit" description="Creates cobertura reports">
+        <cobertura-report srcdir="${src.dir}" destdir="${coverage.html.dir}" datafile="${cobertura.ser}">
+            <fileset dir="${src.dir}">
+            	<include name="**/*.java" />
+           	</fileset>
+			<fileset dir="${src.dir}">
+				<include name="**/*.groovy" />
+			</fileset>
+        </cobertura-report>
+        <cobertura-report srcdir="${src.dir}" destdir="${coverage.xml.dir}" format="xml" datafile="${cobertura.ser}">
+            <fileset dir="${src.dir}">
+            	<include name="**/*.java" />
+           	</fileset>
+			<fileset dir="${src.dir}">
+				<include name="**/*.groovy" />
+			</fileset>
+        </cobertura-report>
+    </target>
+
+	<!-- ================================= 
+          target: jar              
+         ================================= -->
+    <target name="jar" depends="junit" description="Creates a jar file">
+	    <jar destfile="${delivery.dir}/${delivery.name}.jar">
+	        <fileset dir="${classes.dir}" casesensitive="yes" />
+            <manifest>
+	            <attribute name="Built-By" value="Joern Dinkla, www.dinkla.emfbuilder.EMFBuilder" />
+                <attribute name="Class-Path" value="${groovy.jar}"/>
+            </manifest>
+	    </jar>
+    </target>
+
+    <!-- ================================= 
+          target: dev              
+         ================================= -->
+    <target name="dev" depends="report" description="Builds it (development).">
+    </target>
+
+    <!-- ================================= 
+          target: build              
+         ================================= -->
+    <target name="build" depends="junit,jar" description="Builds it.">
+    </target>
+
+    <!-- ================================= 
+          target: delivery              
+         ================================= -->
+    <target name="delivery" depends="build" description="Builds the delivery">
+	    <zip destfile="${delivery.dir}/${delivery.name}-src.zip">
+	        <fileset dir="${src.dir}/.." casesensitive="yes">
+	        	<exclude name="bin/**"/>
+	        	<exclude name="bin-groovy/**"/>
+	        	<exclude name="build/**"/>
+	        	<exclude name="lib/**"/>
+	        	<exclude name=".settings/**"/>
+	        </fileset>
+	    </zip>
+    	<mkdir dir="${delivery.dir}/lib" />
+    	<copy todir="${delivery.dir}/lib">
+    		<fileset dir="lib/"  casesensitive="yes">
+    			<include name="*" />
+    		</fileset>
+		</copy>
+    	<copy todir="${delivery.dir}">
+	        <fileset dir="." casesensitive="yes">
+	        	<include name="README.txt"/>
+	        	<include name="license-GPL.txt"/>
+	        </fileset>    		
+		</copy>
+		<zip destfile="${delivery.dir}/../${delivery.name}.zip">
+			 <zipfileset dir="${delivery.dir}" prefix="${delivery.name}"/>
+		</zip>
+    </target>
+	
+</project>

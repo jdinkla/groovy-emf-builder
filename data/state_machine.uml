@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:StateMachine xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:uml="http://www.eclipse.org/uml2/2.1.0/UML" xmi:id="_yNrfoL3lEdyV-dji-51VSw" name="SM">
+  <region xmi:id="_yNrfob3lEdyV-dji-51VSw">
+    <subvertex xmi:type="uml:State" xmi:id="_yNrfor3lEdyV-dji-51VSw" name="alpha"/>
+    <subvertex xmi:type="uml:State" xmi:id="_yNrfo73lEdyV-dji-51VSw" name="beta"/>
+    <transition xmi:id="_yNrfpL3lEdyV-dji-51VSw" target="_yNrfo73lEdyV-dji-51VSw" source="_yNrfor3lEdyV-dji-51VSw"/>
+  </region>
+</uml:StateMachine>

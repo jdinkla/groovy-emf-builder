@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Profile xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/2.1.0/UML" xmi:id="_yZ59wL3lEdyV-dji-51VSw" name="ecore" metaclassReference="_yZ6k_b3lEdyV-dji-51VSw">
+  <eAnnotations xmi:id="_yZ59wb3lEdyV-dji-51VSw" source="http://www.eclipse.org/uml2/2.0.0/UML">
+    <contents xmi:type="ecore:EPackage" xmi:id="_yZ59wr3lEdyV-dji-51VSw" name="ecore" nsURI="http:///schemas/ecore/_yZwMwL3lEdyV-dji-51VSw/0" nsPrefix="ecore">
+      <eClassifiers xmi:type="ecore:EEnum" xmi:id="_yZ59w73lEdyV-dji-51VSw" name="VisibilityKind">
+        <eAnnotations xmi:id="_yZ59xL3lEdyV-dji-51VSw" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_yZ6k_r3lEdyV-dji-51VSw"/>
+        <eLiterals xmi:id="_yZ59xb3lEdyV-dji-51VSw" name="Unspecified"/>
+        <eLiterals xmi:id="_yZ59xr3lEdyV-dji-51VSw" name="None" value="1"/>
+        <eLiterals xmi:id="_yZ59x73lEdyV-dji-51VSw" name="ReadOnly" value="2"/>
+        <eLiterals xmi:id="_yZ59yL3lEdyV-dji-51VSw" name="ReadWrite" value="3"/>
+        <eLiterals xmi:id="_yZ59yb3lEdyV-dji-51VSw" name="ReadOnlyUnsettable" value="4"/>
+        <eLiterals xmi:id="_yZ59yr3lEdyV-dji-51VSw" name="ReadWriteUnsettable" value="5"/>
+      </eClassifiers>
+      <eClassifiers xmi:type="ecore:EEnum" xmi:id="_yZ6k0L3lEdyV-dji-51VSw" name="FeatureKind">
+        <eAnnotations xmi:id="_yZ6k0b3lEdyV-dji-51VSw" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_yZ6lBb3lEdyV-dji-51VSw"/>
+        <eLiterals xmi:id="_yZ6k0r3lEdyV-dji-51VSw" name="Unspecified"/>
+        <eLiterals xmi:id="_yZ6k073lEdyV-dji-51VSw" name="Simple" value="1"/>
+        <eLiterals xmi:id="_yZ6k1L3lEdyV-dji-51VSw" name="Attribute" value="2"/>
+        <eLiterals xmi:id="_yZ6k1b3lEdyV-dji-51VSw" name="Element" value="3"/>
+        <eLiterals xmi:id="_yZ6k1r3lEdyV-dji-51VSw" name="AttributeWildcard" value="4"/>
+        <eLiterals xmi:id="_yZ6k173lEdyV-dji-51VSw" name="ElementWildcard" value="5"/>
+        <eLiterals xmi:id="_yZ6k2L3lEdyV-dji-51VSw" name="Group" value="6"/>
+      </eClassifiers>
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_yZ6k2b3lEdyV-dji-51VSw" name="EStructuralFeature" abstract="true">
+        <eAnnotations xmi:id="_yZ6k2r3lEdyV-dji-51VSw" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_yZ6lDb3lEdyV-dji-51VSw"/>
+        <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_yZ6k273lEdyV-dji-51VSw" name="isTransient" ordered="false">
+          <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+        </eStructuralFeatures>
+        <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_yZ6k3b3lEdyV-dji-51VSw" name="isUnsettable" ordered="false">
+          <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+        </eStructuralFeatures>
+        <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_yZ6k373lEdyV-dji-51VSw" name="isVolatile" ordered="false">
+          <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+        </eStructuralFeatures>
+        <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_yZ6k4b3lEdyV-dji-51VSw" name="visibility" ordered="false" eType="_yZ59w73lEdyV-dji-51VSw"/>
+        <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_yZ6k473lEdyV-dji-51VSw" name="xmlName" ordered="false">
+          <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        </eStructuralFeatures>
+        <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_yZ6k5b3lEdyV-dji-51VSw" name="xmlNamespace" ordered="false">
+          <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        </eStructuralFeatures>
+        <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_yZ6k573lEdyV-dji-51VSw" name="xmlFeatureKind" ordered="false" eType="_yZ6k0L3lEdyV-dji-51VSw"/>
+      </eClassifiers>
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_yZ6k6b3lEdyV-dji-51VSw" name="EAttribute" eSuperTypes="_yZ6k2b3lEdyV-dji-51VSw">
+        <eAnnotations xmi:id="_yZ6k6r3lEdyV-dji-51VSw" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_yZ6lI73lEdyV-dji-51VSw"/>
+        <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_yZ6k673lEdyV-dji-51VSw" name="attributeName" ordered="false">
+          <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        </eStructuralFeatures>
+        <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_yZ6k7b3lEdyV-dji-51VSw" name="isID" ordered="false">
+          <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+        </eStructuralFeatures>
+        <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_yZ6k773lEdyV-dji-51VSw" name="base_Property" ordered="false" lowerBound="1">
+          <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/2.1.0/UML#//Property"/>
+        </eStructuralFeatures>
+      </eClassifiers>
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_yZ6k8r3lEdyV-dji-51VSw" name="EReference" eSuperTypes="_yZ6k2b3lEdyV-dji-51VSw">
+        <eAnnotations xmi:id="_yZ6k873lEdyV-dji-51VSw" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_yZ6lLL3lEdyV-dji-51VSw"/>
+        <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_yZ6k9L3lEdyV-dji-51VSw" name="referenceName" ordered="false">
+          <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        </eStructuralFeatures>
+        <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_yZ6k9r3lEdyV-dji-51VSw" name="isResolveProxies" ordered="false" defaultValueLiteral="true">
+          <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+        </eStructuralFeatures>
+        <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_yZ6k-L3lEdyV-dji-51VSw" name="base_Property" ordered="false" lowerBound="1">
+          <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/2.1.0/UML#//Property"/>
+        </eStructuralFeatures>
+      </eClassifiers>
+    </contents>
+  </eAnnotations>
+  <elementImport xmi:id="_yZ6k-73lEdyV-dji-51VSw">
+    <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+  </elementImport>
+  <elementImport xmi:id="_yZ6k_L3lEdyV-dji-51VSw">
+    <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+  </elementImport>
+  <elementImport xmi:id="_yZ6k_b3lEdyV-dji-51VSw">
+    <importedElement xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Property"/>
+  </elementImport>
+  <packagedElement xmi:type="uml:Enumeration" xmi:id="_yZ6k_r3lEdyV-dji-51VSw" name="VisibilityKind">
+    <ownedLiteral xmi:id="_yZ6k_73lEdyV-dji-51VSw" name="Unspecified"/>
+    <ownedLiteral xmi:id="_yZ6lAL3lEdyV-dji-51VSw" name="None"/>
+    <ownedLiteral xmi:id="_yZ6lAb3lEdyV-dji-51VSw" name="ReadOnly"/>
+    <ownedLiteral xmi:id="_yZ6lAr3lEdyV-dji-51VSw" name="ReadWrite"/>
+    <ownedLiteral xmi:id="_yZ6lA73lEdyV-dji-51VSw" name="ReadOnlyUnsettable"/>
+    <ownedLiteral xmi:id="_yZ6lBL3lEdyV-dji-51VSw" name="ReadWriteUnsettable"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Enumeration" xmi:id="_yZ6lBb3lEdyV-dji-51VSw" name="FeatureKind">
+    <ownedLiteral xmi:id="_yZ6lBr3lEdyV-dji-51VSw" name="Unspecified"/>
+    <ownedLiteral xmi:id="_yZ6lB73lEdyV-dji-51VSw" name="Simple"/>
+    <ownedLiteral xmi:id="_yZ6lCL3lEdyV-dji-51VSw" name="Attribute"/>
+    <ownedLiteral xmi:id="_yZ6lCb3lEdyV-dji-51VSw" name="Element"/>
+    <ownedLiteral xmi:id="_yZ6lCr3lEdyV-dji-51VSw" name="AttributeWildcard"/>
+    <ownedLiteral xmi:id="_yZ6lC73lEdyV-dji-51VSw" name="ElementWildcard"/>
+    <ownedLiteral xmi:id="_yZ6lDL3lEdyV-dji-51VSw" name="Group"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Stereotype" xmi:id="_yZ6lDb3lEdyV-dji-51VSw" name="EStructuralFeature" isAbstract="true">
+    <ownedAttribute xmi:id="_yZ6lDr3lEdyV-dji-51VSw" name="isTransient">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_yZ6lD73lEdyV-dji-51VSw" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_yZ6lEL3lEdyV-dji-51VSw"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_yZ6lEb3lEdyV-dji-51VSw" name="isUnsettable">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_yZ6lEr3lEdyV-dji-51VSw" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_yZ6lE73lEdyV-dji-51VSw"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_yZ6lFL3lEdyV-dji-51VSw" name="isVolatile">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_yZ6lFb3lEdyV-dji-51VSw" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_yZ6lFr3lEdyV-dji-51VSw"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_yZ6lF73lEdyV-dji-51VSw" name="visibility" type="_yZ6k_r3lEdyV-dji-51VSw">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_yZ6lGL3lEdyV-dji-51VSw" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_yZ6lGb3lEdyV-dji-51VSw"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_yZ6lGr3lEdyV-dji-51VSw" name="xmlName">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_yZ6lG73lEdyV-dji-51VSw" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_yZ6lHL3lEdyV-dji-51VSw"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_yZ6lHb3lEdyV-dji-51VSw" name="xmlNamespace">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_yZ6lHr3lEdyV-dji-51VSw" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_yZ6lH73lEdyV-dji-51VSw"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_yZ6lIL3lEdyV-dji-51VSw" name="xmlFeatureKind" type="_yZ6lBb3lEdyV-dji-51VSw">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_yZ6lIb3lEdyV-dji-51VSw" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_yZ6lIr3lEdyV-dji-51VSw"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Stereotype" xmi:id="_yZ6lI73lEdyV-dji-51VSw" name="EAttribute">
+    <generalization xmi:id="_yZ6lJL3lEdyV-dji-51VSw" general="_yZ6lDb3lEdyV-dji-51VSw"/>
+    <ownedAttribute xmi:id="_yZ6lJb3lEdyV-dji-51VSw" name="attributeName">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_yZ6lJr3lEdyV-dji-51VSw" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_yZ6lJ73lEdyV-dji-51VSw"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_yZ6lKL3lEdyV-dji-51VSw" name="isID">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_yZ6lKb3lEdyV-dji-51VSw" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_yZ6lKr3lEdyV-dji-51VSw"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_yZ6lK73lEdyV-dji-51VSw" name="base_Property" association="_yZ6lNr3lEdyV-dji-51VSw">
+      <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Property"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Stereotype" xmi:id="_yZ6lLL3lEdyV-dji-51VSw" name="EReference">
+    <generalization xmi:id="_yZ6lLb3lEdyV-dji-51VSw" general="_yZ6lDb3lEdyV-dji-51VSw"/>
+    <ownedAttribute xmi:id="_yZ6lLr3lEdyV-dji-51VSw" name="referenceName">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_yZ6lL73lEdyV-dji-51VSw" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_yZ6lML3lEdyV-dji-51VSw"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_yZ6lMb3lEdyV-dji-51VSw" name="isResolveProxies">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_yZ6lMr3lEdyV-dji-51VSw" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_yZ6lM73lEdyV-dji-51VSw"/>
+      <defaultValue xmi:type="uml:LiteralBoolean" xmi:id="_yZ6lNL3lEdyV-dji-51VSw" value="true"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_yZ6lNb3lEdyV-dji-51VSw" name="base_Property" association="_yZ6lOL3lEdyV-dji-51VSw">
+      <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Property"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Extension" xmi:id="_yZ6lNr3lEdyV-dji-51VSw" name="Property_EAttribute" memberEnd="_yZ6lN73lEdyV-dji-51VSw _yZ6lK73lEdyV-dji-51VSw">
+    <ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="_yZ6lN73lEdyV-dji-51VSw" name="extension_EAttribute" type="_yZ6lI73lEdyV-dji-51VSw" aggregation="composite" association="_yZ6lNr3lEdyV-dji-51VSw"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Extension" xmi:id="_yZ6lOL3lEdyV-dji-51VSw" name="Property_EReference" memberEnd="_yZ6lOb3lEdyV-dji-51VSw _yZ6lNb3lEdyV-dji-51VSw">
+    <ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="_yZ6lOb3lEdyV-dji-51VSw" name="extension_EReference" type="_yZ6lLL3lEdyV-dji-51VSw" aggregation="composite" association="_yZ6lOL3lEdyV-dji-51VSw"/>
+  </packagedElement>
+</uml:Profile>

@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:uml="http://www.eclipse.org/uml2/2.1.0/UML" xmi:id="_yQyeAL3lEdyV-dji-51VSw" name="epo2">
+  <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_yQyeAb3lEdyV-dji-51VSw" name="int"/>
+  <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_yQyeAr3lEdyV-dji-51VSw" name="String"/>
+  <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_yQyeA73lEdyV-dji-51VSw" name="Date"/>
+  <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_yQyeBL3lEdyV-dji-51VSw" name="SKU"/>
+  <packagedElement xmi:type="uml:Enumeration" xmi:id="_yQyeBb3lEdyV-dji-51VSw" name="OrderStatus">
+    <ownedLiteral xmi:id="_yQyeBr3lEdyV-dji-51VSw" name="Pending"/>
+    <ownedLiteral xmi:id="_yQyeB73lEdyV-dji-51VSw" name="Back Order"/>
+    <ownedLiteral xmi:id="_yQyeCL3lEdyV-dji-51VSw" name="Complete"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_yQyeCb3lEdyV-dji-51VSw" name="Supplier">
+    <ownedAttribute xmi:id="_yQyeCr3lEdyV-dji-51VSw" name="name" type="_yQyeAr3lEdyV-dji-51VSw">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_yQyeC73lEdyV-dji-51VSw" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_yQyeDL3lEdyV-dji-51VSw"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_yQyeDb3lEdyV-dji-51VSw" name="orders" type="_yQyeIL3lEdyV-dji-51VSw" aggregation="composite" association="_yQzsL73lEdyV-dji-51VSw">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_yQyeDr3lEdyV-dji-51VSw" value="*"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_yQyeD73lEdyV-dji-51VSw"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_yQyeEL3lEdyV-dji-51VSw" name="pendingOrders" type="_yQyeIL3lEdyV-dji-51VSw" association="_yQzsM73lEdyV-dji-51VSw">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_yQyeEb3lEdyV-dji-51VSw" value="*"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_yQyeEr3lEdyV-dji-51VSw"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_yQyeE73lEdyV-dji-51VSw" name="shippedOrders" type="_yQyeIL3lEdyV-dji-51VSw" association="_yQzsN73lEdyV-dji-51VSw">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_yQyeFL3lEdyV-dji-51VSw" value="*"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_yQyeFb3lEdyV-dji-51VSw"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_yQyeFr3lEdyV-dji-51VSw" name="customers" type="_yQyeGb3lEdyV-dji-51VSw" aggregation="composite" association="_yQzsO73lEdyV-dji-51VSw">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_yQyeF73lEdyV-dji-51VSw" value="*"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_yQyeGL3lEdyV-dji-51VSw"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_yQyeGb3lEdyV-dji-51VSw" name="Customer">
+    <ownedAttribute xmi:id="_yQyeGr3lEdyV-dji-51VSw" name="customerID" type="_yQyeAb3lEdyV-dji-51VSw">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_yQyeG73lEdyV-dji-51VSw" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_yQyeHL3lEdyV-dji-51VSw"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_yQyeHb3lEdyV-dji-51VSw" name="orders" type="_yQyeIL3lEdyV-dji-51VSw" association="_yQzsP73lEdyV-dji-51VSw">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_yQyeHr3lEdyV-dji-51VSw" value="*"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_yQyeH73lEdyV-dji-51VSw"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_yQyeIL3lEdyV-dji-51VSw" name="PurchaseOrder">
+    <ownedAttribute xmi:id="_yQyeIb3lEdyV-dji-51VSw" name="comment" type="_yQyeAr3lEdyV-dji-51VSw">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_yQyeIr3lEdyV-dji-51VSw" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_yQyeI73lEdyV-dji-51VSw"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_yQyeJL3lEdyV-dji-51VSw" name="orderDate" type="_yQyeA73lEdyV-dji-51VSw">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_yQyeJb3lEdyV-dji-51VSw" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_yQyeJr3lEdyV-dji-51VSw"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_yQyeJ73lEdyV-dji-51VSw" name="status" type="_yQyeBb3lEdyV-dji-51VSw">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_yQyeKL3lEdyV-dji-51VSw" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_yQyeKb3lEdyV-dji-51VSw"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_yQzFEL3lEdyV-dji-51VSw" name="totalAmount" type="_yQyeAb3lEdyV-dji-51VSw">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_yQzFEb3lEdyV-dji-51VSw" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_yQzFEr3lEdyV-dji-51VSw"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_yQzFE73lEdyV-dji-51VSw" name="customer" type="_yQyeGb3lEdyV-dji-51VSw" association="_yQzsP73lEdyV-dji-51VSw">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_yQzFFL3lEdyV-dji-51VSw" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_yQzFFb3lEdyV-dji-51VSw" value="1"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_yQzFFr3lEdyV-dji-51VSw" name="previousOrder" type="_yQyeIL3lEdyV-dji-51VSw" association="_yQzsQL3lEdyV-dji-51VSw">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_yQzFF73lEdyV-dji-51VSw" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_yQzFGL3lEdyV-dji-51VSw"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_yQzFGb3lEdyV-dji-51VSw" name="items" type="_yQzFIr3lEdyV-dji-51VSw" aggregation="composite" association="_yQzsRL3lEdyV-dji-51VSw">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_yQzFGr3lEdyV-dji-51VSw" value="*"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_yQzFG73lEdyV-dji-51VSw"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_yQzFHL3lEdyV-dji-51VSw" name="billTo" type="_yQzFOL3lEdyV-dji-51VSw" aggregation="composite" association="_yQzsRb3lEdyV-dji-51VSw">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_yQzFHb3lEdyV-dji-51VSw" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_yQzFHr3lEdyV-dji-51VSw" value="1"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_yQzFH73lEdyV-dji-51VSw" name="shipTo" type="_yQzFOL3lEdyV-dji-51VSw" aggregation="composite" association="_yQzsSb3lEdyV-dji-51VSw">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_yQzFIL3lEdyV-dji-51VSw" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_yQzFIb3lEdyV-dji-51VSw"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_yQzFIr3lEdyV-dji-51VSw" name="Item">
+    <ownedAttribute xmi:id="_yQzFI73lEdyV-dji-51VSw" name="productName" type="_yQyeAr3lEdyV-dji-51VSw">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_yQzFJL3lEdyV-dji-51VSw" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_yQzFJb3lEdyV-dji-51VSw"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_yQzFJr3lEdyV-dji-51VSw" name="quantity" type="_yQyeAb3lEdyV-dji-51VSw">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_yQzFJ73lEdyV-dji-51VSw" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_yQzFKL3lEdyV-dji-51VSw"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_yQzFKb3lEdyV-dji-51VSw" name="USPrice" type="_yQyeAb3lEdyV-dji-51VSw">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_yQzFKr3lEdyV-dji-51VSw" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_yQzFK73lEdyV-dji-51VSw"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_yQzFLL3lEdyV-dji-51VSw" name="comment" type="_yQyeAr3lEdyV-dji-51VSw">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_yQzFLb3lEdyV-dji-51VSw" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_yQzFLr3lEdyV-dji-51VSw"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_yQzFL73lEdyV-dji-51VSw" name="shipDate" type="_yQyeA73lEdyV-dji-51VSw">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_yQzFML3lEdyV-dji-51VSw" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_yQzFMb3lEdyV-dji-51VSw"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_yQzFMr3lEdyV-dji-51VSw" name="partNum" type="_yQyeBL3lEdyV-dji-51VSw">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_yQzFM73lEdyV-dji-51VSw" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_yQzFNL3lEdyV-dji-51VSw"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_yQzFNb3lEdyV-dji-51VSw" name="order" type="_yQyeIL3lEdyV-dji-51VSw" association="_yQzsRL3lEdyV-dji-51VSw">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_yQzFNr3lEdyV-dji-51VSw" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_yQzFN73lEdyV-dji-51VSw" value="1"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_yQzFOL3lEdyV-dji-51VSw" name="Address" isAbstract="true">
+    <ownedAttribute xmi:id="_yQzFOb3lEdyV-dji-51VSw" name="name" type="_yQyeAr3lEdyV-dji-51VSw">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_yQzFOr3lEdyV-dji-51VSw" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_yQzFO73lEdyV-dji-51VSw"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_yQzFPL3lEdyV-dji-51VSw" name="country" type="_yQyeAr3lEdyV-dji-51VSw">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_yQzFPb3lEdyV-dji-51VSw" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_yQzFPr3lEdyV-dji-51VSw"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_yQzFP73lEdyV-dji-51VSw" name="USAddress">
+    <generalization xmi:id="_yQzFQL3lEdyV-dji-51VSw" general="_yQzFOL3lEdyV-dji-51VSw"/>
+    <ownedAttribute xmi:id="_yQzFQb3lEdyV-dji-51VSw" name="street" type="_yQyeAr3lEdyV-dji-51VSw">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_yQzFQr3lEdyV-dji-51VSw" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_yQzFQ73lEdyV-dji-51VSw"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_yQzFRL3lEdyV-dji-51VSw" name="city" type="_yQyeAr3lEdyV-dji-51VSw">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_yQzFRb3lEdyV-dji-51VSw" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_yQzFRr3lEdyV-dji-51VSw"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_yQzFR73lEdyV-dji-51VSw" name="state" type="_yQyeAr3lEdyV-dji-51VSw">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_yQzsIL3lEdyV-dji-51VSw" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_yQzsIb3lEdyV-dji-51VSw"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_yQzsIr3lEdyV-dji-51VSw" name="zip" type="_yQyeAb3lEdyV-dji-51VSw">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_yQzsI73lEdyV-dji-51VSw" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_yQzsJL3lEdyV-dji-51VSw"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_yQzsJb3lEdyV-dji-51VSw" name="GlobalLocation">
+    <ownedAttribute xmi:id="_yQzsJr3lEdyV-dji-51VSw" name="countryCode" type="_yQyeAb3lEdyV-dji-51VSw">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_yQzsJ73lEdyV-dji-51VSw" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_yQzsKL3lEdyV-dji-51VSw"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_yQzsKb3lEdyV-dji-51VSw" name="GlobalAddress">
+    <generalization xmi:id="_yQzsKr3lEdyV-dji-51VSw" general="_yQzFOL3lEdyV-dji-51VSw"/>
+    <generalization xmi:id="_yQzsK73lEdyV-dji-51VSw" general="_yQzsJb3lEdyV-dji-51VSw"/>
+    <ownedAttribute xmi:id="_yQzsLL3lEdyV-dji-51VSw" name="location" type="_yQyeAr3lEdyV-dji-51VSw">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_yQzsLb3lEdyV-dji-51VSw" value="*"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_yQzsLr3lEdyV-dji-51VSw"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_yQzsL73lEdyV-dji-51VSw" memberEnd="_yQyeDb3lEdyV-dji-51VSw _yQzsML3lEdyV-dji-51VSw">
+    <ownedEnd xmi:id="_yQzsML3lEdyV-dji-51VSw" name="" type="_yQyeCb3lEdyV-dji-51VSw" association="_yQzsL73lEdyV-dji-51VSw">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_yQzsMb3lEdyV-dji-51VSw" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_yQzsMr3lEdyV-dji-51VSw" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_yQzsM73lEdyV-dji-51VSw" memberEnd="_yQyeEL3lEdyV-dji-51VSw _yQzsNL3lEdyV-dji-51VSw">
+    <ownedEnd xmi:id="_yQzsNL3lEdyV-dji-51VSw" name="" type="_yQyeCb3lEdyV-dji-51VSw" association="_yQzsM73lEdyV-dji-51VSw">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_yQzsNb3lEdyV-dji-51VSw" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_yQzsNr3lEdyV-dji-51VSw"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_yQzsN73lEdyV-dji-51VSw" memberEnd="_yQyeE73lEdyV-dji-51VSw _yQzsOL3lEdyV-dji-51VSw">
+    <ownedEnd xmi:id="_yQzsOL3lEdyV-dji-51VSw" name="" type="_yQyeCb3lEdyV-dji-51VSw" association="_yQzsN73lEdyV-dji-51VSw">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_yQzsOb3lEdyV-dji-51VSw" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_yQzsOr3lEdyV-dji-51VSw"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_yQzsO73lEdyV-dji-51VSw" memberEnd="_yQyeFr3lEdyV-dji-51VSw _yQzsPL3lEdyV-dji-51VSw">
+    <ownedEnd xmi:id="_yQzsPL3lEdyV-dji-51VSw" name="" type="_yQyeCb3lEdyV-dji-51VSw" association="_yQzsO73lEdyV-dji-51VSw">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_yQzsPb3lEdyV-dji-51VSw" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_yQzsPr3lEdyV-dji-51VSw" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_yQzsP73lEdyV-dji-51VSw" memberEnd="_yQyeHb3lEdyV-dji-51VSw _yQzFE73lEdyV-dji-51VSw"/>
+  <packagedElement xmi:type="uml:Association" xmi:id="_yQzsQL3lEdyV-dji-51VSw" memberEnd="_yQzFFr3lEdyV-dji-51VSw _yQzsQb3lEdyV-dji-51VSw">
+    <ownedEnd xmi:id="_yQzsQb3lEdyV-dji-51VSw" name="" type="_yQyeIL3lEdyV-dji-51VSw" association="_yQzsQL3lEdyV-dji-51VSw">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_yQzsQr3lEdyV-dji-51VSw" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_yQzsQ73lEdyV-dji-51VSw"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_yQzsRL3lEdyV-dji-51VSw" memberEnd="_yQzFGb3lEdyV-dji-51VSw _yQzFNb3lEdyV-dji-51VSw"/>
+  <packagedElement xmi:type="uml:Association" xmi:id="_yQzsRb3lEdyV-dji-51VSw" memberEnd="_yQzFHL3lEdyV-dji-51VSw _yQzsRr3lEdyV-dji-51VSw">
+    <ownedEnd xmi:id="_yQzsRr3lEdyV-dji-51VSw" name="" type="_yQyeIL3lEdyV-dji-51VSw" association="_yQzsRb3lEdyV-dji-51VSw">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_yQzsR73lEdyV-dji-51VSw" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_yQzsSL3lEdyV-dji-51VSw" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_yQzsSb3lEdyV-dji-51VSw" memberEnd="_yQzFH73lEdyV-dji-51VSw _yQzsSr3lEdyV-dji-51VSw">
+    <ownedEnd xmi:id="_yQzsSr3lEdyV-dji-51VSw" name="" type="_yQyeIL3lEdyV-dji-51VSw" association="_yQzsSb3lEdyV-dji-51VSw">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_yQzsS73lEdyV-dji-51VSw" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_yQzsTL3lEdyV-dji-51VSw" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+</uml:Model>

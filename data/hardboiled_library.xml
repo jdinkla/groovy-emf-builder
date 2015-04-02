@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="ASCII"?>
+<org.eclipse.example.library:Library xmlns:org.eclipse.example.library="http:///org/eclipse/example/library.ecore" name="Hardboiled Library">
+  <writers name="Dashiell Hammet" books="//@books.0 //@books.1"/>
+  <writers name="Raymond Chandler" books="//@books.2 //@books.3"/>
+  <writers name="Ross Macdonald" books="//@books.4 //@books.5"/>
+  <books title="The Maltese Falcon" pages="224" author="//@writers.0"/>
+  <books title="Red Harvest" pages="224" author="//@writers.0"/>
+  <books title="The Big Sleep" pages="234" author="//@writers.1"/>
+  <books title="The High Window" pages="272" author="//@writers.1"/>
+  <books title="Meet Me at the Morgue" pages="241" author="//@writers.2"/>
+  <books title="The Far Side of the Dollar" pages="245" author="//@writers.2"/>
+</org.eclipse.example.library:Library>
