@@ -28,15 +28,7 @@
 
 	<property environment="env" />
 	<property file="build.properties" />
-	
-	<!-- classpath.cobertura -->
-	<path id="classpath.cobertura">
-		<fileset dir="${cobertura.dir}">
-		        <include name="cobertura.jar" />
-		        <include name="lib/**/*.jar" />
-		</fileset>
-    </path>
-	
+		
 	<!-- classpath.compile -->
     <path id="classpath.compile">
 		<pathelement path="${junit.jar}/" />
@@ -65,7 +57,6 @@
     	<pathelement path="${examples.2}" />
     </path>
 
-	<taskdef classpathref="classpath.cobertura" resource="tasks.properties"/>
 	<taskdef name="groovy" classname="org.codehaus.groovy.ant.Groovy" classpath="${fq.groovy.jar}"/>
 	<taskdef name="groovyc" classname="org.codehaus.groovy.ant.Groovyc" classpath="${fq.groovy.jar}"/>
 
@@ -92,8 +83,6 @@
         <delete dir="${reports.dir}" failonerror="false"/>
     	<delete dir="${delivery.dir}" failonerror="false"/>
     	<delete dir="${build.dir}" failonerror="false"/>
-        <delete file="cobertura.log" failonerror="false"/>
-        <delete file="cobertura.ser" failonerror="false"/>
     </target>
 	
     <!-- ================================= 
@@ -125,29 +114,20 @@
 			<classpath refid="classpath.compile" />
 		</groovyc>
     </target>
-
-	<!-- ================================= 
-          target: instrument              
-         ================================= -->
-    <target name="instrument" depends="compile" description="Runs cobertura test coverage">
-    	<delete file="${cobertura.ser}" />
-    	<cobertura-instrument todir="${instrumented.dir}" datafile="${cobertura.ser}">
-    		<fileset dir="${classes.dir}">
-	            <include name="**/*.class" />
-	            <exclude name="**/*Test.class" />
-	            <exclude name="**/*Test$_*.class" />
-            </fileset>
-    	</cobertura-instrument>
-    </target>
 	
+    <!-- ================================= 
+         target: instrument              
+        ================================= -->
+    <target name="instrument" depends="compile" description="Blank">
+    </target>
+ 
+
 	<!-- ================================= 
           target: junit              
          ================================= -->
     <target name="junit" depends="compile" description="Runs the JUnit tests">
         <junit fork="true" errorproperty="test.failed" failureproperty="test.failed">
-        	<sysproperty key="net.sourceforge.cobertura.datafile" file="${cobertura.ser}" />
         	<classpath refid="classpath.junit" />
-			<classpath refid="classpath.cobertura" />
             <formatter type="brief" usefile="false"/>
             <formatter type="xml" />
             <batchtest todir="${reports.xml.dir}">
@@ -170,23 +150,7 @@
 	<!-- ================================= 
           target: report              
          ================================= -->
-    <target name="report" depends="clean,compile2,instrument,junit" description="Creates cobertura reports">
-        <cobertura-report srcdir="${src.dir}" destdir="${coverage.html.dir}" datafile="${cobertura.ser}">
-            <fileset dir="${src.dir}">
-            	<include name="**/*.java" />
-           	</fileset>
-			<fileset dir="${src.dir}">
-				<include name="**/*.groovy" />
-			</fileset>
-        </cobertura-report>
-        <cobertura-report srcdir="${src.dir}" destdir="${coverage.xml.dir}" format="xml" datafile="${cobertura.ser}">
-            <fileset dir="${src.dir}">
-            	<include name="**/*.java" />
-           	</fileset>
-			<fileset dir="${src.dir}">
-				<include name="**/*.groovy" />
-			</fileset>
-        </cobertura-report>
+    <target name="report" depends="clean,compile2,instrument,junit" description="Blank">
     </target>
 
 	<!-- ================================= 
